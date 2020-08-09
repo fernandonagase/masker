@@ -1,8 +1,12 @@
 import React from 'react';
 
+import './styles.css';
+
 function Header() {
     return (
-        <div>Subnet Calculator</div>
+        <header className="header">
+            <h1>Subnet Calculator</h1>
+        </header>
     );
 }
 
