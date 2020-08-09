@@ -1,0 +1,97 @@
+.input-row {
+    display: flex;
+}
+
+.input-row > .input-group,
+.input-row > .radio-group {
+    flex: 1;
+}
+
+.input-row > .input-group + .input-group,
+.input-row > .radio-group + .input-group {
+    margin-left: 1rem;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group > label {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.input-group > input {
+    display: block;
+    width: 100%;
+    height: 4.2rem;
+    padding: 0 1rem;
+    background: var(--control-on-background);
+    border: none;
+    border-radius: 0.2rem;
+    color: var(--text-light);
+}
+
+.custom-input {
+    padding: 1rem;
+}
+
+.radio-group {
+    margin-bottom: 1.2rem;
+}
+
+.radio-group > label {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.radio-inline {
+    display: flex;
+}
+
+.radio-inline > .radio-item + .radio-item {
+    margin-left: 1.2rem;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+}
+
+.radio-item > label {
+    margin-left: 0.5rem;
+}
+
+.button {
+    cursor: pointer;
+    height: 4rem;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--control-on-background);
+    color: var(--text-light);
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background: var(--control-on-background-lighten);
+}
+
+.button-block {
+    width: 100%;
+}
+
+.user-input-container {
+    border-bottom: 2px solid var(--control-on-background);
+    margin-bottom: 2rem;
+}
+
+.user-input-container > button {
+    margin-bottom: 2rem;
+}
