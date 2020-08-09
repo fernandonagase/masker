@@ -32,3 +32,8 @@ button,
 textarea {
     font: 400 1.6rem "Nunito";
 }
+
+.app {
+    width: 90vw;
+    max-width: 768px;
+}
