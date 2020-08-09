@@ -12,31 +12,6 @@
     margin-left: 1rem;
 }
 
-.input-group {
-    margin-bottom: 1.2rem;
-}
-
-.input-group > label {
-    display: inline-block;
-    margin-bottom: 0.6rem;
-    font-weight: 700;
-}
-
-.input-group > input {
-    display: block;
-    width: 100%;
-    height: 4.2rem;
-    padding: 0 1rem;
-    background: var(--control-on-background);
-    border: none;
-    border-radius: 0.2rem;
-    color: var(--text-light);
-}
-
-.custom-input {
-    padding: 1rem;
-}
-
 .radio-group {
     margin-bottom: 1.2rem;
 }
