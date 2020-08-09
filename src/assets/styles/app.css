@@ -1,0 +1,34 @@
+:root {
+    font-size: 62.5%;
+
+    --background-color: #3943B7;
+    --text-light: #EDF6F9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100vh;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-light);
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body,
+input,
+button,
+textarea {
+    font: 400 1.6rem "Nunito";
+}
