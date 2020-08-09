@@ -1,0 +1,8 @@
+.radio-item {
+    display: flex;
+    align-items: center;
+}
+
+.radio-item > label {
+    margin-left: 0.5rem;
+}

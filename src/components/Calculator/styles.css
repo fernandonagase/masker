@@ -30,15 +30,6 @@
     margin-left: 1.2rem;
 }
 
-.radio-item {
-    display: flex;
-    align-items: center;
-}
-
-.radio-item > label {
-    margin-left: 0.5rem;
-}
-
 .button {
     cursor: pointer;
     height: 4rem;

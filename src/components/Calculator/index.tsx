@@ -2,6 +2,7 @@ import React from 'react';
 
 import './styles.css';
 import Input from '../Input';
+import RadioButton from '../RadioButton';
 
 function Calculator() {
     return (
@@ -12,14 +13,8 @@ function Calculator() {
                     <div className="radio-group">
                         <label>Addressing Type</label>
                         <div className="radio-inline">
-                            <div className="radio-item">
-                                <input type="radio" name="type" id="classful" checked disabled />
-                                <label htmlFor="classful">Classful</label>
-                            </div>
-                            <div className="radio-item">
-                                <input type="radio" name="type" id="classless" disabled />
-                                <label htmlFor="classless">Classless (CIDR)</label>
-                            </div>
+                            <RadioButton name="type" title="classful" label="Classful" checked disabled />
+                            <RadioButton name="type" title="classless" label="Classless (CIDR)" disabled />
                         </div>
                     </div>
                     <Input name="mask" label="Subnet Mask" placeholder="Ex: 255.255.255.0" />
