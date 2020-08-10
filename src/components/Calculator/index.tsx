@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './styles.css';
 import Input from '../Input';
 import RadioButton from '../RadioButton';
 
 function Calculator() {
+    const [ addressingType, setAddressingType ] = useState('classful');
+
     return (
         <main>
             <form>
@@ -13,11 +15,28 @@ function Calculator() {
                     <div className="radio-group">
                         <label>Addressing Type</label>
                         <div className="radio-inline">
-                            <RadioButton name="type" title="classful" label="Classful" checked disabled />
-                            <RadioButton name="type" title="classless" label="Classless (CIDR)" disabled />
+                            <RadioButton
+                                name="type"
+                                title="classful"
+                                label="Classful"
+                                checked={addressingType === 'classful'}
+                                onClick={() => {setAddressingType('classful')}}
+                                
+                            />
+                            <RadioButton
+                                name="type"
+                                title="classless"
+                                label="Classless (CIDR)"
+                                checked={addressingType === 'classless'}
+                                onClick={() => {setAddressingType('classless')}}
+                                
+                            />
                         </div>
                     </div>
-                    <Input name="mask" label="Subnet Mask" placeholder="Ex: 255.255.255.0" />
+                    { addressingType === 'classful' 
+                        ? <Input name="mask" label="Subnet Mask" placeholder="Ex: 255.255.255.0" />
+                        : <Input type="number" name="maskbits" label="Mask Bits" placeholder="Ex: 24 (1 - 32)" min="1" max="32" />
+                    }
                     <button type="submit" className="button button-block">Calcular</button>
                 </div>
                 <div>
