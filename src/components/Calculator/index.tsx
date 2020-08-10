@@ -48,7 +48,7 @@ function Calculator() {
                     </div>
                     <div className="input-row">
                         <Input name="subnet" label="Subnet Address" placeholder="Ex: 192.168.4.0" disabled />
-                        <Input name="broadcast" label="Subnet Address" placeholder="Ex: 192.168.4.255" disabled />
+                        <Input name="broadcast" label="Broadcast Address" placeholder="Ex: 192.168.4.255" disabled />
                     </div>
                 </div>
             </form>
