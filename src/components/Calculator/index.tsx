@@ -42,9 +42,9 @@ function Calculator() {
                 <div>
                     <Input name="range" label="Address Range" placeholder="Ex: 192.168.4.0 - 192.168.4.255" disabled />
                     <div className="input-row">
-                        <Input name="maxsubnets" label="Max Subnets" type="number" disabled />
-                        <Input name="maxaddresses" label="Max Addresses" type="number" disabled />
-                        <Input name="maxhosts" label="Max Hosts" type="number" disabled />
+                        <Input name="maxsubnets" label="Max Subnets" placeholder="Ex: 1" type="number" disabled />
+                        <Input name="maxaddresses" label="Max Addresses" placeholder="Ex: 256" type="number" disabled />
+                        <Input name="maxhosts" label="Max Hosts" type="number" placeholder="Ex: 254" disabled />
                     </div>
                     <div className="input-row">
                         <Input name="subnet" label="Subnet Address" placeholder="Ex: 192.168.4.0" disabled />
