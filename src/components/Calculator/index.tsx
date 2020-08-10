@@ -40,15 +40,15 @@ function Calculator() {
                     <button type="submit" className="button button-block">Calcular</button>
                 </div>
                 <div>
-                    <Input name="range" label="Address Range" placeholder="Ex: 192.168.4.0 - 192.168.4.255" />
+                    <Input name="range" label="Address Range" placeholder="Ex: 192.168.4.0 - 192.168.4.255" disabled />
                     <div className="input-row">
-                        <Input name="maxsubnets" label="Max Subnets" type="number" />
-                        <Input name="maxaddresses" label="Max Addresses" type="number" />
-                        <Input name="maxhosts" label="Max Hosts" type="number" />
+                        <Input name="maxsubnets" label="Max Subnets" type="number" disabled />
+                        <Input name="maxaddresses" label="Max Addresses" type="number" disabled />
+                        <Input name="maxhosts" label="Max Hosts" type="number" disabled />
                     </div>
                     <div className="input-row">
-                        <Input name="subnet" label="Subnet Address" placeholder="Ex: 192.168.4.0" />
-                        <Input name="broadcast" label="Subnet Address" placeholder="Ex: 192.168.4.255" />
+                        <Input name="subnet" label="Subnet Address" placeholder="Ex: 192.168.4.0" disabled />
+                        <Input name="broadcast" label="Subnet Address" placeholder="Ex: 192.168.4.255" disabled />
                     </div>
                 </div>
             </form>
