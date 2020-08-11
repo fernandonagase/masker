@@ -92,3 +92,10 @@
     grid-template: 1fr / 5fr 3fr;
     column-gap: 0.8rem;
 }
+
+@media (max-width: 850px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

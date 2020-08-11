@@ -19,7 +19,6 @@ function Calculator() {
     return (
         <main>
             <form className="main-container">
-                <button type="submit" className="button button-block calculate-button">Calcular</button>
                 <div className="user-input-container">
                     <Input
                         name="address"
@@ -142,6 +141,7 @@ function Calculator() {
                         />
                     </div>
                 </div>
+                <button type="submit" className="button button-block calculate-button">Calcular</button>
             </form>
         </main>
     );
