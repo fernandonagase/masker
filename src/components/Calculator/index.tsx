@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 
 import './styles.css';
 import Input from '../Input';
 import RadioButton from '../RadioButton';
 import Select from '../SelectButton';
+
+import SubnetCalculator from '../../core/SubnetCalculator';
 
 function Calculator() {
     const [ ipAddress, setIpAddress ] = useState('');
@@ -21,9 +23,22 @@ function Calculator() {
     const [ subnetAddress, setSubnetAddress ] = useState('');
     const [ broadcastAddress, setBroadcastAddress ] = useState('');
 
+    function handleCalculateSubnets(e: FormEvent) {
+        e.preventDefault();
+
+        const calculator = new SubnetCalculator(ipAddress, mask);
+
+        setAddressRange(calculator.hostAddressRange);
+        setMaxSubnets(`${calculator.maxSubnets}`);
+        setMaxAddresses(`${calculator.maxAddresses}`);
+        setMaxHosts(`${calculator.maxHosts}`);
+        setSubnetAddress(calculator.subnetAddress);
+        setBroadcastAddress(calculator.broadcastAddress);
+    }
+
     return (
         <main>
-            <form className="main-container">
+            <form className="main-container" onSubmit={handleCalculateSubnets}>
                 <div className="user-input-container">
                     <Input
                         name="address"
