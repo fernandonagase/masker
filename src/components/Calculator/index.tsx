@@ -3,10 +3,13 @@ import React, { useState } from 'react';
 import './styles.css';
 import Input from '../Input';
 import RadioButton from '../RadioButton';
+import Select from '../SelectButton';
 
 function Calculator() {
     const [ ipAddress, setIpAddress ] = useState('');
     const [ addressingType, setAddressingType ] = useState('classful');
+
+    const [ networkClass, setNetworkClass ] = useState('');
     const [ mask, setMask ] = useState('');
 
     const [ addressRange, setAddressRange ] = useState('');
@@ -50,10 +53,16 @@ function Calculator() {
                     </div>
                     { addressingType === 'classful' 
                         ? <div>
-                            <Input
-                                name="class"
+                            <Select
+                                name="netclass"
                                 label="Network Class"
-                                placeholder="Ex: C"
+                                value={networkClass}
+                                onChange={(e) => {setNetworkClass(e.target.value)}}
+                                options={[
+                                    { label: 'A', value: 'A'},
+                                    { label: 'B', value: 'B'},
+                                    { label: 'C', value: 'C'}
+                                ]}
                             />
                             <div className="classful-inputs">
                                 <Input
