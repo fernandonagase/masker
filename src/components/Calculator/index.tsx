@@ -11,6 +11,8 @@ function Calculator() {
 
     const [ networkClass, setNetworkClass ] = useState('');
     const [ mask, setMask ] = useState('');
+    const [ subnetBits, setSubnetBits ] = useState(0);
+    const [ maxSubnetBits, setMaxSubnetBits ] = useState();
 
     const [ addressRange, setAddressRange ] = useState('');
     const [ maxSubnets, setMaxSubnets ] = useState('');
@@ -76,6 +78,11 @@ function Calculator() {
                                 <Input
                                     name="subnetbits"
                                     label="Subnet Bits"
+                                    type="number"
+                                    min="0"
+                                    max={maxSubnetBits}
+                                    value={subnetBits}
+                                    onChange={(e) => {setSubnetBits(Number(e.target.value))}}
                                     placeholder="Ex: 0"
                                     className="classful-inputs-bits"
                                 />
