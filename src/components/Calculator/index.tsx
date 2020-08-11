@@ -50,13 +50,29 @@ function Calculator() {
                         </div>
                     </div>
                     { addressingType === 'classful' 
-                        ? <Input
-                            name="mask"
-                            label="Subnet Mask"
-                            placeholder="Ex: 255.255.255.0"
-                            onChange={(e) => {setMask(e.target.value)}}
-                            value={mask}
-                        />
+                        ? <div>
+                            <Input
+                                name="class"
+                                label="Network Class"
+                                placeholder="Ex: C"
+                            />
+                            <div className="classful-inputs">
+                                <Input
+                                    name="mask"
+                                    label="Subnet Mask"
+                                    placeholder="Ex: 255.255.255.0"
+                                    onChange={(e) => {setMask(e.target.value)}}
+                                    value={mask}
+                                    className="classful-inputs-mask"
+                                />
+                                <Input
+                                    name="subnetbits"
+                                    label="Subnet Bits"
+                                    placeholder="Ex: 0"
+                                    className="classful-inputs-bits"
+                                />
+                            </div>
+                        </div>
                         : <Input
                             type="number"
                             name="maskbits"
