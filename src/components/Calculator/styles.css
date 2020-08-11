@@ -53,11 +53,27 @@
     width: 100%;
 }
 
+.main-container {
+    display: grid;
+    grid-template: repeat(2, 50%) / repeat(2, 50%);
+    grid-template-areas: 
+        "user-input calculated-input"
+        "calc-button calc-button";
+    column-gap: 0.8rem;
+}
+
 .user-input-container {
-    border-bottom: 2px solid var(--control-on-background);
-    margin-bottom: 2rem;
+    grid-area: user-input;
 }
 
 .user-input-container > button {
     margin-bottom: 2rem;
+}
+
+.calculated-input-container {
+    grid-area: calculated-input;
+}
+
+.calculate-button {
+    grid-area: calc-button;
 }
