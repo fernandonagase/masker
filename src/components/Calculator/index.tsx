@@ -15,7 +15,7 @@ function Calculator() {
     const [ networkClass, setNetworkClass ] = useState('');
     const [ mask, setMask ] = useState('');
     const [ subnetBits, setSubnetBits ] = useState(0);
-    const [ maxSubnetBits, setMaxSubnetBits ] = useState();
+    const [ maxSubnetBits, setMaxSubnetBits ] = useState(0);
 
     const [ maskBits, setMaskBits ] = useState(0);
 
@@ -31,13 +31,15 @@ function Calculator() {
             return;
         }
         
+        setMaxSubnetBits(30 - classBits[networkClass])
+
         const mBits = classBits[networkClass] + subnetBits;
         setMaskBits(mBits);
 
         const netMask = numberToIp(parseInt('1'.repeat(mBits).padEnd(32, '0'), 2));
 
         setMask(netMask);
-    }, [networkClass, subnetBits])
+    }, [networkClass, subnetBits]);
 
     function handleCalculateSubnets(e: FormEvent) {
         e.preventDefault();
