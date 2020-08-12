@@ -1,11 +1,12 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 
 import './styles.css';
 import Input from '../Input';
 import RadioButton from '../RadioButton';
 import Select from '../SelectButton';
 
-import SubnetCalculator from '../../core/SubnetCalculator';
+import SubnetCalculator, { classBits } from '../../core/SubnetCalculator';
+import { numberToIp } from '../../util/IpUtils';
 
 function Calculator() {
     const [ ipAddress, setIpAddress ] = useState('');
@@ -16,6 +17,8 @@ function Calculator() {
     const [ subnetBits, setSubnetBits ] = useState(0);
     const [ maxSubnetBits, setMaxSubnetBits ] = useState();
 
+    const [ maskBits, setMaskBits ] = useState(0);
+
     const [ addressRange, setAddressRange ] = useState('');
     const [ maxSubnets, setMaxSubnets ] = useState('');
     const [ maxAddresses, setMaxAddresses ] = useState('');
@@ -23,10 +26,23 @@ function Calculator() {
     const [ subnetAddress, setSubnetAddress ] = useState('');
     const [ broadcastAddress, setBroadcastAddress ] = useState('');
 
+    useEffect(() => {
+        if (networkClass === '') {
+            return;
+        }
+        
+        const mBits = classBits[networkClass] + subnetBits;
+        setMaskBits(mBits);
+
+        const netMask = numberToIp(parseInt('1'.repeat(mBits).padEnd(32, '0'), 2));
+
+        setMask(netMask);
+    }, [networkClass, subnetBits])
+
     function handleCalculateSubnets(e: FormEvent) {
         e.preventDefault();
 
-        const calculator = new SubnetCalculator(ipAddress, mask);
+        const calculator = new SubnetCalculator(ipAddress, mask, networkClass);
 
         setAddressRange(calculator.hostAddressRange);
         setMaxSubnets(`${calculator.maxSubnets}`);
@@ -110,8 +126,8 @@ function Calculator() {
                             placeholder="Ex: 24 (1 - 32)"
                             min="1"
                             max="32"
-                            onChange={(e) => {setMask(e.target.value)}}
-                            value={mask}
+                            onChange={(e) => {setMaskBits(Number(e.target.value))}}
+                            value={maskBits}
                         />
                     }
                 </div>
