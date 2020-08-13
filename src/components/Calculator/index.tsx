@@ -159,15 +159,17 @@ function Calculator() {
                         disabled
                     />
                     <div className="input-row">
-                        <Input
-                            name="maxsubnets"
-                            label="Max Subnets"
-                            placeholder="Ex: 1"
-                            type="number"
-                            onChange={(e) => {setMaxSubnets(e.target.value)}}
-                            value={maxSubnets}
-                            disabled
-                        />
+                        { addressingType === 'classful' && (
+                            <Input
+                                name="maxsubnets"
+                                label="Max Subnets"
+                                placeholder="Ex: 1"
+                                type="number"
+                                onChange={(e) => {setMaxSubnets(e.target.value)}}
+                                value={maxSubnets}
+                                disabled
+                            />
+                        )}
                         <Input
                             name="maxaddresses"
                             label="Max Addresses"
