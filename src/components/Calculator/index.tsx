@@ -17,7 +17,7 @@ function Calculator() {
     const [ subnetBits, setSubnetBits ] = useState(0);
     const [ maxSubnetBits, setMaxSubnetBits ] = useState(0);
 
-    const [ maskBits, setMaskBits ] = useState(0);
+    const [ maskBits, setMaskBits ] = useState(1);
 
     const [ addressRange, setAddressRange ] = useState('');
     const [ maxSubnets, setMaxSubnets ] = useState('');
