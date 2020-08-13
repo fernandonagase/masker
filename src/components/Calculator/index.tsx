@@ -42,6 +42,10 @@ function Calculator() {
     }, [networkClass, subnetBits]);
 
     useEffect(() => {
+        if (addressingType === 'classless') {
+            return;
+        }
+
         const dotIndex = ipAddress.indexOf('.');
         if (dotIndex === -1) {
             return;
