@@ -55,7 +55,7 @@
 
 .main-container {
     display: grid;
-    grid-template: repeat(2, 50%) / repeat(2, 50%);
+    grid-template: 1fr 4rem / repeat(2, 1fr);
     grid-template-areas: 
         "user-input calculated-input"
         "calc-button calc-button";
