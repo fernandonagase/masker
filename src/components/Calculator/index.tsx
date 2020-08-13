@@ -42,7 +42,19 @@ function Calculator() {
     }, [networkClass, subnetBits]);
 
     useEffect(() => {
-        
+        const dotIndex = ipAddress.indexOf('.');
+        if (dotIndex === -1) {
+            return;
+        }
+
+        const firstOctet = Number(ipAddress.slice(0, dotIndex));
+        if (firstOctet <= classfulData.A.maxFirstOctet) {
+            setNetworkClass('A');
+        } else if (firstOctet <= classfulData.B.maxFirstOctet) {
+            setNetworkClass('B');
+        } else if (firstOctet <= classfulData.C.maxFirstOctet) {
+            setNetworkClass('C');
+        }
     }, [ipAddress])
 
     function handleCalculateSubnets(e: FormEvent) {

@@ -3,12 +3,13 @@ import { ipToNumber, numberToIp } from "../util/IpUtils";
 
 interface ClassfulData {
     defaultBits: number;
+    maxFirstOctet: number;
 }
 
 export const classfulData: {[key: string]: ClassfulData} = {
-    A: { defaultBits: 8 },
-    B: { defaultBits: 16 },
-    C: { defaultBits: 24 }
+    A: { defaultBits: 8, maxFirstOctet: 127 },
+    B: { defaultBits: 16, maxFirstOctet: 191 },
+    C: { defaultBits: 24, maxFirstOctet: 223 }
 }
 
 export default class SubnetCalculator {
