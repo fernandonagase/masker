@@ -50,7 +50,7 @@ export default class SubnetCalculator {
             maskBits = maskBits >>> 1;
         }
 
-        return Math.trunc(2 ** ((Math.log(maskBits + 1)/Math.log(2)) - classBits[this._networkClass]));
+        return (maskBits + 1) / (2 ** classBits[this._networkClass]);
     }
 
     get maxAddresses(): number {
