@@ -1,11 +1,15 @@
 import BitSequence from "./BitSequence";
 import { ipToNumber, numberToIp } from "../util/IpUtils";
 
-export const classBits: {[key: string]: number;} = {
-    A: 8,
-    B: 16,
-    C: 24
-};
+interface ClassfulData {
+    defaultBits: number;
+}
+
+export const classfulData: {[key: string]: ClassfulData} = {
+    A: { defaultBits: 8 },
+    B: { defaultBits: 16 },
+    C: { defaultBits: 24 }
+}
 
 export default class SubnetCalculator {
     _ipAddress: BitSequence;
@@ -50,7 +54,7 @@ export default class SubnetCalculator {
             maskBits = maskBits >>> 1;
         }
 
-        return (maskBits + 1) / (2 ** classBits[this._networkClass]);
+        return (maskBits + 1) / (2 ** classfulData[this._networkClass].defaultBits);
     }
 
     get maxAddresses(): number {

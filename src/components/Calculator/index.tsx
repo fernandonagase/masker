@@ -5,7 +5,7 @@ import Input from '../Input';
 import RadioButton from '../RadioButton';
 import Select from '../SelectButton';
 
-import SubnetCalculator, { classBits } from '../../core/SubnetCalculator';
+import SubnetCalculator, { classfulData } from '../../core/SubnetCalculator';
 import { numberToIp } from '../../util/IpUtils';
 
 function Calculator() {
@@ -31,15 +31,19 @@ function Calculator() {
             return;
         }
         
-        setMaxSubnetBits(30 - classBits[networkClass])
+        setMaxSubnetBits(30 - classfulData[networkClass].defaultBits)
 
-        const mBits = classBits[networkClass] + subnetBits;
+        const mBits = classfulData[networkClass].defaultBits + subnetBits;
         setMaskBits(mBits);
 
         const netMask = numberToIp(parseInt('1'.repeat(mBits).padEnd(32, '0'), 2));
 
         setMask(netMask);
     }, [networkClass, subnetBits]);
+
+    useEffect(() => {
+        
+    }, [ipAddress])
 
     function handleCalculateSubnets(e: FormEvent) {
         e.preventDefault();
