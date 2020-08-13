@@ -60,7 +60,14 @@ function Calculator() {
     function handleCalculateSubnets(e: FormEvent) {
         e.preventDefault();
 
-        const calculator = new SubnetCalculator(ipAddress, mask, networkClass);
+        let subnetMask = mask;
+
+        if (addressingType === 'classless') {
+            const decimalMask = ((2 ** maskBits - 1) << (32 - maskBits)) >>> 0;
+            subnetMask = numberToIp(decimalMask);
+        }
+
+        const calculator = new SubnetCalculator(ipAddress, subnetMask, networkClass);
 
         setAddressRange(calculator.hostAddressRange);
         setMaxSubnets(`${calculator.maxSubnets}`);
