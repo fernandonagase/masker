@@ -37,7 +37,7 @@ WIP
 
 - [React](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- [create-react-app]("https://create-react-app.dev/")
+- [create-react-app](https://create-react-app.dev/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Yarn](https://yarnpkg.com/)
 
