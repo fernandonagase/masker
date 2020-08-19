@@ -28,7 +28,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum assumend
 
 # Demonstração
 
-WIP
+![Masker Demo](github/masker-demo.png)
 
 # Como usar?
 
