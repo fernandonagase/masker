@@ -32,7 +32,24 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum assumend
 
 # Como usar?
 
-WIP
+## Pré-requisitos
+- Git
+- Yarn
+
+## Passo a passo
+```
+# Clone este repositório: 
+git clone https://github.com/nagasefernando/masker.git
+
+# Acesse o diretório masker: 
+cd masker
+
+# Instale as dependências:
+yarn install
+
+# Inicie a aplicação:
+yarn start
+```
 
 # Ferramentas
 
