@@ -4,16 +4,13 @@
 
 <p align="center"><strong>Masker 🎭 Em progresso</strong></p>
 <p align="center">
-    <a href="#sobre">Sobre</a> .
     <a href="#funcionalidades">Funcionalidades</a> .
     <a href="#demonstração">Demonstração</a> .
     <a href="#como-usar">Como usar?</a> .
     <a href="#ferramentas">Ferramentas</a>
 </p>
 
-# Sobre
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum assumenda numquam animi magnam, voluptatum inventore cupiditate distinctio. Numquam nemo rem corporis unde ut inventore voluptas id totam deleniti quod!
+<p align="center"><strong>Masker</strong> é uma calculadora de sub-redes (classful e classless) construída em React com Typescript.</p>
 
 # Funcionalidades
 
