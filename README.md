@@ -17,11 +17,14 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum assumend
 
 # Funcionalidades
 
-- Lorem
-- Ipsum
-- Dolor
-- Sit
-- Amet
+- [x] Calculadora classful ❗ (passível de otimizações)
+- [x] Calculadora classless (CIDR) ❗❗❗ (possui bugs )
+- [x] Cálculo de informações da rede
+	- [x] Faixa de endereços para hosts
+	- [x] Máximo de sub-redes
+	- [x] Máximo de endereços e hosts
+	- [x] Endereços de sub-rede e broadcast
+	- [ ] Máscara de sub-rede (a partir do número de sub-redes ou de hosts por sub-rede) 
 
 # Demonstração
 
