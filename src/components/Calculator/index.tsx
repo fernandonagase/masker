@@ -1,12 +1,12 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 
-import './styles.css';
-import Input from '../Input';
-import RadioButton from '../RadioButton';
-import Select from '../SelectButton';
+import 'components/Calculator/styles.css';
+import Input from 'components/Input';
+import RadioButton from 'components/RadioButton';
+import Select from 'components/SelectButton';
 
-import SubnetCalculator, { classfulData } from '../../core/SubnetCalculator';
-import { numberToIp } from '../../util/IpUtils';
+import SubnetCalculator, { classfulData } from 'core/SubnetCalculator';
+import { numberToIp } from 'util/IpUtils';
 
 function Calculator() {
     const [ ipAddress, setIpAddress ] = useState('');
@@ -59,7 +59,7 @@ function Calculator() {
         } else if (firstOctet <= classfulData.C.maxFirstOctet) {
             setNetworkClass('C');
         }
-    }, [ipAddress])
+    }, [ipAddress, addressingType])
 
     function handleCalculateSubnets(e: FormEvent) {
         e.preventDefault();

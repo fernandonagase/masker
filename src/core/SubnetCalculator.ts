@@ -1,5 +1,5 @@
-import BitSequence from "./BitSequence";
-import { ipToNumber, numberToIp } from "../util/IpUtils";
+import BitSequence from "core/BitSequence";
+import { ipToNumber, numberToIp } from "util/IpUtils";
 
 interface ClassfulData {
     defaultBits: number;

@@ -8,6 +8,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -20,6 +21,9 @@
     "jsx": "react"
   },
   "include": [
-    "src"
+    "./src/*"
+  ],
+  "exclude": [
+      "node_modules"
   ]
 }
